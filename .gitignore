@@ -1,0 +1,17 @@
+# Build artifacts
+bin/
+obj/
+
+# IDE files
+.vs/
+.idea/
+*.user
+*.suo
+
+# OS noise
+.DS_Store
+Thumbs.db
+
+# NuGet
+*.nupkg
+packages/

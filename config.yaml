@@ -1,0 +1,35 @@
+# RaidSchedule plugin config
+# All times are interpreted in the configured timezone.
+
+timezone: "Europe/London"  # IANA timezone name. Handles BST/GMT automatically.
+
+schedule:
+  # Day of week: Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday
+  # Time: 24-hour HH:mm
+  windowStart:
+    day: Friday
+    time: "16:00"
+  windowEnd:
+    day: Monday
+    time: "00:00"   # Midnight Sunday-into-Monday
+
+# Warnings broadcast before raiding turns OFF, in minutes before close.
+preCloseWarnings: [60, 30, 15]
+
+# What's blocked outside raid hours
+blocking:
+  structures: true       # Walls, floors, roofs
+  barricades: true       # Doors, locks, traps, sandbags
+  vehicles: true         # Only when locked AND empty (occupied vehicles always damageable)
+
+# Per-player feedback when hitting a protected target
+playerFeedback:
+  enabled: true
+  throttleSeconds: 10    # Same player won't get the message more often than this
+  message: "&cRaiding is disabled. Next raid window: &eFriday 16:00 UK &7(in {timeUntil})"
+
+# Server-wide announcements
+announcements:
+  onWindowOpen: "&a&lRAID WINDOW OPEN &7- raiding is now enabled until Monday 00:00 UK!"
+  onWindowClose: "&c&lRAID WINDOW CLOSED &7- raiding is now disabled until Friday 16:00 UK."
+  onPreCloseWarning: "&e&lWARNING: &7Raid window closes in &c{minutes} minutes&7."
