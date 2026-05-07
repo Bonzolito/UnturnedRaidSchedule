@@ -18,6 +18,9 @@ OpenMod plugin for Unturned that restricts raiding to configured time windows.
 
 ## Building from source
 Requires .NET SDK 8.0+
+dotnet restore
+dotnet build
+Output DLL will be in `bin/Debug/netstandard2.1/`.
 
 ## Config
 See `config.yaml` for all options. Key fields:
